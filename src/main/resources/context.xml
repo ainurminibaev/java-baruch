@@ -37,10 +37,13 @@
 
     <bean class="foo.bar.lab04.RunWithThisMethodPostProcessor"/>
 
+    <bean class="foo.bar.lab04.InjectRandomIntBeanPostProcessor"/>
+
     <bean class="foo.bar.lab05.RealSubject" id="realSubject"/>
 
     <bean class="foo.bar.lab05.BenchMarkProxySubject" id="subject">
         <constructor-arg name="realSubject" ref="realSubject"/>
     </bean>
+    <bean class="foo.bar.lab04.RandomIntClazz"/>
 
 </beans>
