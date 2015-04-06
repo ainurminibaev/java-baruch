@@ -2,10 +2,11 @@ package foo.bar.lab03;
 
 import foo.bar.lab02.Quoter;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 
 /**
- * Created by giylmi on 06.04.2015.
+ * Created by am on 06.04.2015.
  */
 public class TalkingRobot implements Robot {
 
@@ -20,8 +21,10 @@ public class TalkingRobot implements Robot {
     }
 
     @Override
+    @PostConstruct
     public void talk() {
-        for (Quoter quoter: quoters)
+        for (Quoter quoter : quoters)
             quoter.sayQuote();
     }
+
 }

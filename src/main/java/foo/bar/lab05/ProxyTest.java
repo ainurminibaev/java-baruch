@@ -1,15 +1,14 @@
-package foo.bar.lab02;
+package foo.bar.lab05;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * Created by am on 06.04.2015.
+ * Created by ainurminibaev on 06.04.15.
  */
-public class QuoterTest {
-
+public class ProxyTest {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
-        Quoter quoter = context.getBean(Quoter.class);
-        quoter.sayQuote();
+        Subject subject = (Subject) context.getBean("subject");
+        subject.call();
     }
 }

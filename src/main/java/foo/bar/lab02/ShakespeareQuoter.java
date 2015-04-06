@@ -1,9 +1,7 @@
 package foo.bar.lab02;
 
-import java.util.List;
-
 /**
- * Created by giylmi on 06.04.2015.
+ * Created by am on 06.04.2015.
  */
 public class ShakespeareQuoter implements Quoter {
 

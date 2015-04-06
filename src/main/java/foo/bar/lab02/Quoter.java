@@ -1,7 +1,7 @@
 package foo.bar.lab02;
 
 /**
- * Created by giylmi on 06.04.2015.
+ * Created by am on 06.04.2015.
  */
 public interface Quoter {
 

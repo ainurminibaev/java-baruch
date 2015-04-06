@@ -1,9 +1,11 @@
 package foo.bar.lab02;
 
+import foo.bar.lab01.RunThisMethod;
+
 import java.util.List;
 
 /**
- * Created by giylmi on 06.04.2015.
+ * Created by am on 06.04.2015.
  */
 public class TerminatorQuoter implements Quoter {
     List<String> quotes;
@@ -17,6 +19,7 @@ public class TerminatorQuoter implements Quoter {
     }
 
     @Override
+    @RunThisMethod(repeat = 4)
     public void sayQuote() {
         System.out.println(quotes);
     }
