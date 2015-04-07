@@ -3,9 +3,8 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean class="foo.bar.day01.lab07.ProxyBeanPostProcessor" id="timeProxy"/>
-    <bean class="foo.bar.day01.lab05.RealSubject"/>
-    <bean class="foo.bar.day01.lab08.TransactionBeanPostProcessor"/>
+    <bean class="foo.bar.day01.lab10.DeprecatedOldShit" id="replacedBean"/>
+    <bean class="foo.bar.day01.lab10.DeprecatedBeanFactoryPostProcessor"/>
 
 
 </beans>

@@ -5,9 +5,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-    <bean class="foo.bar.lab09.DestroyMethodPrototypeWarningBeanFactoryPostProcessor"/>
+    <bean class="foo.bar.day01.lab09.DestroyMethodPrototypeWarningBeanFactoryPostProcessor"/>
 
-    <bean class="foo.bar.lab09.DestroyablePrototype" destroy-method="destroy" scope="prototype">
+    <bean class="foo.bar.day01.lab09.DestroyablePrototype" destroy-method="destroy" scope="prototype">
         <property name="username" value="${username}"/>
     </bean>
 

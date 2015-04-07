@@ -10,7 +10,7 @@
         <constructor-arg value="Trust me"/>
     </bean>
 
-    <bean id="terminatorQuoter" class="foo.bar.lab02.TerminatorQuoter">
+    <bean id="terminatorQuoter" class="foo.bar.day01.lab02.TerminatorQuoter">
         <property name="quotes">
             <list>
                 <value>Be or not to be</value>
@@ -20,11 +20,11 @@
         </property>
     </bean>
 
-    <bean class="foo.bar.lab02.ShakespeareQuoter" id="shakespeareQuoter">
+    <bean class="foo.bar.day01.lab02.ShakespeareQuoter" id="shakespeareQuoter">
         <property name="quote" value="To be or not to be"/>
     </bean>
 
-    <bean class="foo.bar.lab03.TalkingRobot" id="talkingRobot">
+    <bean class="foo.bar.day01.lab03.TalkingRobot" id="talkingRobot">
         <property name="quoters">
             <list>
                 <ref bean="shakespeareQuoter"/>
@@ -35,15 +35,15 @@
 
     <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
 
-    <bean class="foo.bar.lab04.RunWithThisMethodPostProcessor"/>
+    <bean class="foo.bar.day01.lab04.RunWithThisMethodPostProcessor"/>
 
-    <bean class="foo.bar.lab04.InjectRandomIntBeanPostProcessor"/>
+    <bean class="foo.bar.day01.lab04.InjectRandomIntBeanPostProcessor"/>
 
-    <bean class="foo.bar.lab05.RealSubject" id="realSubject"/>
+    <bean class="foo.bar.day01.lab05.RealSubject" id="realSubject"/>
 
-    <bean class="foo.bar.lab05.BenchMarkProxySubject" id="subject">
+    <bean class="foo.bar.day01.lab05.BenchMarkProxySubject" id="subject">
         <constructor-arg name="realSubject" ref="realSubject"/>
     </bean>
-    <bean class="foo.bar.lab04.RandomIntClazz"/>
+    <bean class="foo.bar.day01.lab04.RandomIntClazz"/>
 
 </beans>
