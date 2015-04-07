@@ -3,9 +3,6 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean class="foo.bar.day02.lab03.RandomQuoter" id="quoter" scope="prototype"/>
-    <bean class="foo.bar.day02.lab03.SpeakingRobot">
-        <property name="quoter" ref="quoter"/>
-    </bean>
+    <bean class="foo.bar.day02.lab03.RandomQuoter" id="quoter" scope="prototype" />
 
 </beans>
