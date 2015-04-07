@@ -7,7 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class InjectTest {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("day01/context.xml");
         RandomIntClazz bean = context.getBean(RandomIntClazz.class);
         bean.getRandomInt();
     }

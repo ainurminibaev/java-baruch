@@ -8,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class BeanchMarkTest {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("context07.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("day01/context07.xml");
         Subject subject = context.getBean(Subject.class);
         subject.call();
     }

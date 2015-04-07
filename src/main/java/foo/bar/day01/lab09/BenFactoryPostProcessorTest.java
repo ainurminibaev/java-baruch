@@ -7,7 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class BenFactoryPostProcessorTest {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("context09.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("day01/context09.xml");
         DestroyablePrototype bean = context.getBean(DestroyablePrototype.class);
     }
 }
