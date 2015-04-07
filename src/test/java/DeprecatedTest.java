@@ -1,4 +1,5 @@
 import foo.bar.day01.lab10.AwesomeClass;
+import foo.bar.day01.lab10.NoOldClass;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -13,6 +14,8 @@ public class DeprecatedTest {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("context10.xml");
         Object replacedBean = context.getBean("replacedBean");
         Assert.assertEquals(AwesomeClass.class, replacedBean.getClass());
+        Object noReplaceBean = context.getBean("noOldClass");
+        Assert.assertEquals(NoOldClass.class, noReplaceBean.getClass());
 
     }
 }

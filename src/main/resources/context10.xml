@@ -5,6 +5,7 @@
 
     <bean class="foo.bar.day01.lab10.DeprecatedOldShit" id="replacedBean"/>
     <bean class="foo.bar.day01.lab10.DeprecatedBeanFactoryPostProcessor"/>
+    <bean class="foo.bar.day01.lab10.NoOldClass" id="noOldClass"/>
 
 
 </beans>
