@@ -1,8 +1,11 @@
 package foo.bar.day03.tp.domain;
 
+import foo.bar.day03.tp.annotation.Table;
+
 /**
  * Created by ainurminibaev on 08.04.15.
  */
+@Table("order")
 public class Order extends BaseEntity {
 
     private Event event;

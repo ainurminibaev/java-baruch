@@ -21,6 +21,11 @@ import java.util.List;
  */
 @Repository
 public class MigrationDaoImpl extends AbstractDao implements MigrationDao {
+
+    public MigrationDaoImpl() {
+        super(null);
+    }
+
     @Override
     public boolean alreadyMigrated(final String fileName) {
         List<Integer> query = getTemplate().query(new PreparedStatementCreator() {

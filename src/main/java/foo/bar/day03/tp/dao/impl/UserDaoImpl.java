@@ -15,7 +15,11 @@ import java.sql.SQLException;
  * Created by ainurminibaev on 08.04.15.
  */
 @Repository
-public class UserDaoImpl extends AbstractDao implements UserDao {
+public class UserDaoImpl extends AbstractDao<Guest> implements UserDao {
+
+    public UserDaoImpl() {
+        super(Guest.class);
+    }
 
     @Override
     public Guest register(Guest guest) {
@@ -27,7 +31,7 @@ public class UserDaoImpl extends AbstractDao implements UserDao {
 
     @Override
     public Guest findById(Long id) {
-        return findById(id, "guest", new RowMapper<Guest>() {
+        return findById(id, new RowMapper<Guest>() {
             @Override
             public Guest mapRow(ResultSet resultSet, int i) throws SQLException {
                 Guest guest = new Guest();
