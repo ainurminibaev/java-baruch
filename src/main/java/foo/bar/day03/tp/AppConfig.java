@@ -13,7 +13,7 @@ import javax.annotation.PostConstruct;
  * Created by ainurminibaev on 08.04.15.
  */
 @Configuration
-@ComponentScan("foo.bar.day03")
+@ComponentScan("foo.bar.day03.tp")
 public class AppConfig {
 
     @Autowired

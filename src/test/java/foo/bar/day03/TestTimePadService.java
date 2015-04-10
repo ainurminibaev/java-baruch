@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
 
 /**
  * Created by ainurminibaev on 08.04.15.
@@ -17,6 +18,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
         AppConfig.class
 })
 @RunWith(SpringJUnit4ClassRunner.class)
+@WebAppConfiguration
 public class TestTimePadService {
 
     @Autowired

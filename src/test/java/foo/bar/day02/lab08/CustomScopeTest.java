@@ -29,7 +29,7 @@ public class CustomScopeTest extends TestCase {
         Assert.assertEquals(bean, applicationContext.getBean(BeanEl.class));
 
         //sleep
-        Thread.sleep(fiveMinScope.getLiveTime() + 100);
+        Thread.sleep(fiveMinScope.getLiveTime() + 1000);
         Assert.assertNotEquals(bean, applicationContext.getBean(BeanEl.class));
 
         //it's ok too short time

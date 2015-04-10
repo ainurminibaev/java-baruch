@@ -1,5 +1,6 @@
 package foo.bar.day03.tp.dao;
 
+import foo.bar.day03.tp.annotation.ClassMapper;
 import foo.bar.day03.tp.annotation.Table;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -10,6 +11,7 @@ import org.springframework.jdbc.support.KeyHolder;
 
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
+import java.lang.reflect.Field;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -27,8 +29,28 @@ public abstract class AbstractDao<T> {
 
     Class<T> type;
 
-    public AbstractDao(Class<T> type) {
-        this.type = type;
+    String tableName;
+
+    RowMapper<T> mapper;
+
+    public AbstractDao(Class<T> clazz) {
+        if (clazz != null) {
+            this.type = clazz;
+            Table tableAnnotation = clazz.getAnnotation(Table.class);
+            if (tableAnnotation == null) {
+                throw new IllegalStateException("No Table annotation");
+            }
+            for (Field field : clazz.getFields()) {
+                if (field.getAnnotation(ClassMapper.class) != null) {
+                    try {
+                        mapper = (RowMapper<T>) field.get(clazz.newInstance());
+                    } catch (Exception e) {
+                        throw new IllegalStateException("Cannon instatiate Abstract DAO");
+                    }
+                }
+            }
+            tableName = tableAnnotation.value();
+        }
     }
 
     @PostConstruct
@@ -54,16 +76,16 @@ public abstract class AbstractDao<T> {
         return (Long) keyHolder.getKey();
     }
 
-    public T findById(Long id, RowMapper<T> mapper) {
-        Table tableAnnotation = type.getAnnotation(Table.class);
-        if (tableAnnotation == null) {
-            throw new IllegalStateException("No Table annotation");
-        }
-        List<T> query = getTemplate().query("SELECT * FROM " + tableAnnotation.value(), mapper);
+    public T findById(Long id) {
+        List<T> query = getTemplate().query("SELECT * FROM " + tableName + " WHERE id=" + id, mapper);
         try {
             return query.get(0);
         } catch (IndexOutOfBoundsException e) {
             return null;
         }
+    }
+
+    public List<T> findAll() {
+        return getTemplate().query("SELECT * FROM " + tableName, mapper);
     }
 }

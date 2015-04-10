@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * Created by ainurminibaev on 08.04.15.
  */
@@ -24,5 +26,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public Guest findById(Long id) {
         return userDao.findById(id);
+    }
+
+    @Override
+    public List<Guest> findAll() {
+        return userDao.findAll();
     }
 }

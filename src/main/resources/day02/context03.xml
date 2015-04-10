@@ -5,4 +5,6 @@
 
     <bean class="foo.bar.day02.lab03.RandomQuoter" id="quoter" scope="prototype" />
 
+
+
 </beans>

@@ -5,11 +5,7 @@ import foo.bar.day03.tp.dao.AbstractDao;
 import foo.bar.day03.tp.dao.UserDao;
 import foo.bar.day03.tp.domain.Guest;
 import foo.bar.day03.tp.util.QueryManager;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 /**
  * Created by ainurminibaev on 08.04.15.
@@ -29,17 +25,4 @@ public class UserDaoImpl extends AbstractDao<Guest> implements UserDao {
         return guest;
     }
 
-    @Override
-    public Guest findById(Long id) {
-        return findById(id, new RowMapper<Guest>() {
-            @Override
-            public Guest mapRow(ResultSet resultSet, int i) throws SQLException {
-                Guest guest = new Guest();
-                guest.setId(resultSet.getLong(1));
-                guest.setLogin(resultSet.getString(2));
-                guest.setCity(resultSet.getString(3));
-                return guest;
-            }
-        });
-    }
 }
