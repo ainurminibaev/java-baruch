@@ -40,7 +40,7 @@ public abstract class AbstractDao<T> {
             if (tableAnnotation == null) {
                 throw new IllegalStateException("No Table annotation");
             }
-            for (Field field : clazz.getFields()) {
+            for (Field field : clazz.getDeclaredFields()) {
                 if (field.getAnnotation(ClassMapper.class) != null) {
                     try {
                         mapper = (RowMapper<T>) field.get(clazz.newInstance());
