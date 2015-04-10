@@ -1,11 +1,7 @@
 package foo.bar.day03;
 
-import foo.bar.day03.remote.Account;
-import foo.bar.day03.remote.ClientAppConfig;
-import foo.bar.day03.remote.SimpleObject;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import foo.bar.day03.remote.*;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -30,7 +26,7 @@ public class RemoteServicesTest {
      * Don't run this test without ServerStarter run
      */
     @Test
-    @Ignore
+    //@Ignore
     public void test() {
         simpleObject.insert();
         List<Account> accounts = simpleObject.call();
@@ -38,4 +34,8 @@ public class RemoteServicesTest {
         Assert.assertEquals(1, accounts.size());
     }
 
+    @Before
+    public void setUp() throws Exception {
+        ServerStarter.main(null);
+    }
 }

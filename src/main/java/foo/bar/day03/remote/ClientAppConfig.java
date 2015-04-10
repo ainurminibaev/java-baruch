@@ -26,6 +26,10 @@ public class ClientAppConfig {
         RmiProxyFactoryBean rmiProxyFactoryBean = new RmiProxyFactoryBean();
         rmiProxyFactoryBean.setServiceUrl("rmi://localhost:1199/AccountService");
         rmiProxyFactoryBean.setServiceInterface(AccountService.class);
+        rmiProxyFactoryBean.setLookupStubOnStartup(false);
+        rmiProxyFactoryBean.setRefreshStubOnConnectFailure(true);
+        rmiProxyFactoryBean.afterPropertiesSet();
+
         return rmiProxyFactoryBean;
     }
 }
