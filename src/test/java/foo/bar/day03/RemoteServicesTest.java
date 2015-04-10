@@ -26,6 +26,9 @@ public class RemoteServicesTest {
     SimpleObject simpleObject;
 
 
+    /**
+     * Don't run this test without ServerStarter run
+     */
     @Test
     @Ignore
     public void test() {
