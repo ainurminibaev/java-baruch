@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
 import javax.annotation.PostConstruct;
@@ -27,6 +28,11 @@ public class AppConfig {
         dataSource.setUrl("jdbc:h2:mem");
         dataSource.setPassword("");
         return dataSource;
+    }
+
+    @Bean
+    public Jackson2ObjectMapperFactoryBean jackson2ObjectMapperFactoryBean() {
+        return new Jackson2ObjectMapperFactoryBean();
     }
 
 

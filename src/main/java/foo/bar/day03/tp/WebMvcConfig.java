@@ -5,15 +5,19 @@ import freemarker.template.TemplateException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfig;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
 
 @EnableWebMvc
@@ -56,4 +60,18 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         super.addViewControllers(registry);
         registry.addViewController("/").setViewName("hello");
     }
+
+    @Override
+    public void configureHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers) {
+        Properties mappings = new Properties();
+        mappings.put(Exception.class, "/");
+
+        SimpleMappingExceptionResolver exceptionResolver = new SimpleMappingExceptionResolver();
+        exceptionResolver.addStatusCode("/", HttpStatus.NOT_FOUND.value());
+        exceptionResolver.setExceptionMappings(mappings);
+        exceptionResolvers.add(exceptionResolver);
+        super.configureHandlerExceptionResolvers(exceptionResolvers);
+    }
+
+
 }
