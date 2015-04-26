@@ -41,7 +41,7 @@ public class IndexController {
      */
     @RequestMapping(value = "/index/{id}", method = RequestMethod.GET)
     public String pathVar(@PathVariable String id, @RequestHeader Map<String, String> headers, ModelMap modelMap) {
-        //put to model
+        //put to model some data
         modelMap.put("var", id);
         modelMap.addAttribute(headers);
         return "hello";
