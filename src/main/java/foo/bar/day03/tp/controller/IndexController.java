@@ -43,6 +43,7 @@ public class IndexController {
     public String pathVar(@PathVariable String id, @RequestHeader Map<String, String> headers, ModelMap modelMap) {
         //put to model some data
         modelMap.put("var", id);
+        //list
         modelMap.addAttribute(headers);
         return "hello";
     }
