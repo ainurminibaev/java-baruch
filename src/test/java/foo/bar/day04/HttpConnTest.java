@@ -7,6 +7,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -28,6 +29,7 @@ public class HttpConnTest {
 
 
     @Test
+    @Ignore
     public void test() throws IOException {
         HttpPost post = new HttpPost("http://localhost:8080/string");
         post.setEntity(new StringEntity("sdfd"));
