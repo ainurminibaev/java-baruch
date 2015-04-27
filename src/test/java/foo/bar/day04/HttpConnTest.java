@@ -23,7 +23,7 @@ import java.io.IOException;
 })
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-public class HttpTest {
+public class HttpConnTest {
     CloseableHttpClient httpClient = HttpClients.createDefault();
 
 
