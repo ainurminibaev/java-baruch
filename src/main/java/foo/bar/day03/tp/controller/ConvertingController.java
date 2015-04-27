@@ -18,5 +18,6 @@ public class ConvertingController {
     @RequestMapping(value = "/guest", method = RequestMethod.POST)
     public ResponseEntity<String> createGuest(RequestEntity<Guest> guestRequestEntity) {
         return null;
+        //TODO чувак надо сделать
     }
 }
