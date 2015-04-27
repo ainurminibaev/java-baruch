@@ -39,6 +39,7 @@ public class AppConfig {
 
     @PostConstruct
     public void migrate() {
+        //comment
         migrationDao.migrate("day03/migrations/");
     }
 
