@@ -21,6 +21,7 @@ public class GuestController {
     @RequestMapping(value = "/guests", method = RequestMethod.GET)
     public String getGuestList(ModelMap map) {
         map.addAttribute("users", userService.findAll());
+        //
         return "users";
     }
 
