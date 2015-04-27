@@ -31,6 +31,7 @@ public class HttpConnTest {
     @Test
     @Ignore
     public void test() throws IOException {
+        //comment
         HttpPost post = new HttpPost("http://localhost:8080/string");
         post.setEntity(new StringEntity("sdfd"));
         CloseableHttpResponse response = httpClient.execute(post);
