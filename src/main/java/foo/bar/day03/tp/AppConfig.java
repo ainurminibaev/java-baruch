@@ -27,6 +27,7 @@ public class AppConfig {
         dataSource.setUsername("sa");
         dataSource.setUrl("jdbc:h2:mem");
         dataSource.setPassword("");
+        //inspection
         return dataSource;
     }
 
